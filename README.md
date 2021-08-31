@@ -41,6 +41,10 @@ docker-compose up -d
 docker-compose down
 ```
 
+`
 ## Contribute
+```
+mysql -h 127.0.0.1 -u user --password=password
+```
 
 ## Reference

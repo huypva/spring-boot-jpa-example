@@ -1,9 +1,32 @@
 version: "3.4"
 services:
-  hello-world:
-    build: hello-world
-    container_name: 'hello-world'
+#  spring-boot-jpa-example:
+#    build: spring-boot-jpa
+#    container_name: 'spring-boot-jpa'
+#    environment:
+#      - spring_profiles_active=docker
+#    ports:
+#      - 8081:8081
+#    depends_on:
+#      - mysql
+#    networks:
+#      - spring-boot-jpa-example-network
+  mysql:
+    image: mysql:5.7
+    container_name: 'mysql'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
+    restart: always
     environment:
-      - spring_profiles_active=docker
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: spring-boot-jpa-example
     ports:
-      - 8081:8081
+      - 3306:3306
+    networks:
+      - spring-boot-jpa-example-network
+networks:
+  spring-boot-jpa-example-network:
+    driver: bridge
