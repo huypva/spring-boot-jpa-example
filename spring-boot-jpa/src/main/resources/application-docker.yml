@@ -1,12 +1,10 @@
 server:
-  port : 8081
+  port : 8082
 spring:
-  profiles:
-    active: local
   application:
     name: "spring-boot-jpa-example"
   datasource:
-    url: "jdbc:mysql://localhost:3306/spring_boot_jpa_example"
+    url: "jdbc:mysql://mysql:3306/spring_boot_jpa_example"
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -1,10 +1,9 @@
-package io.codebyexample.helloworld;
+package io.codebyexample.springbootjpa;
 
-import io.codebyexample.springbootjpa.SpringBootJpaApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = SpringBootJpaApplication.class)
+@SpringBootTest
 class SpringBootJpaApplicationTests {
 
 	@Test
