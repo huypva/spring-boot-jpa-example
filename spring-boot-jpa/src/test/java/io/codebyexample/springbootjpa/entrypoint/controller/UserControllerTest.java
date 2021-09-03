@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.ResultActions;
  * @author huypva
  */
 @WebMvcTest(UserController.class)
-class UserControllerTest {
+public class UserControllerTest {
 
   @Autowired
   private MockMvc mockMvc;

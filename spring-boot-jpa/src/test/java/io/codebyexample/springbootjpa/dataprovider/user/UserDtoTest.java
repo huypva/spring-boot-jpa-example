@@ -5,6 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author huypva
  */
-class UserDtoTest {
+public class UserDtoTest {
 
 }
