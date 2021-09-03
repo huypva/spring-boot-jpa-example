@@ -9,7 +9,7 @@ The example project for StringBoot service
 ## Project structure
 ```
 .
-├── hello-world
+├── spring-boot-jpa
 │   ├── Dockerfile
 │   ...
 ├── docker-compose.yaml
@@ -25,26 +25,63 @@ The example project for StringBoot service
     [Docker Compose](https://github.com/docker/compose)
 
 ## Start project
-## Start project in local
-## Start project in docker 
+## Start project by manual
+
+- Start mysql in docker
+```
+$ cd database
+$ docker build --tag mysqldb .
+$ docker run  -p 3306:3306 --name mysqldb -d mysqldb
+$ cd ..
+```
+
+- Check connect to database
+
+```sql
+$ mysql -h 127.0.0.1 -u user --password=password
+mysql> use spring_boot_jpa_example;
+mysql> select * from user;
++---------+-----------+
+| user_id | user_name |
++---------+-----------+
+|       1 | Huy       |
+|       2 | Hai       |
++---------+-----------+
+2 rows in set (0.01 sec)
+
+mysql> exit;
+```
+
+- Build & start project
+
+```shell script
+$ cd spring_boot_jpa
+$ mvn clean package
+$ mvn spring-boot:run
+```
+
+- Send request
+
+```
+$ curl http://localhost:8081/api/user\?username\=Huy
+{"userId":1,"userName":"Huy"}%
+```
+
+## Start project with docker-compose
 
 - Start project
 ```console
-docker-compose up -d
+$ docker-compose up -d
 ```
-
-- Some request & test
-
 
 - Stop project
 ```console
-docker-compose down
+$ docker-compose down
 ```
 
 `
 ## Contribute
-```
-mysql -h 127.0.0.1 -u user --password=password
-```
 
 ## Reference
+- https://github.com/iamdvr/prepopulated-mysql-container-example
+- https://www.testcontainers.org
