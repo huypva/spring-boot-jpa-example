@@ -4,7 +4,7 @@ COPY pom.xml /workdir/spring-boot-jpa/pom.xml
 RUN mvn dependency:go-offline
 
 COPY src /workdir/spring-boot-jpa/src
-RUN mvn install
+RUN mvn -DskipTests=true install
 RUN mkdir  -p target/depency
 WORKDIR /workdir/spring-boot-jpa/target/dependency
 RUN jar -xf ../*.jar
