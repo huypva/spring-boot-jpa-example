@@ -55,9 +55,9 @@ mysql> exit;
 - Build & start project
 
 ```shell script
-$ cd spring_boot_jpa
-$ mvn clean package
-$ mvn spring-boot:run
+$ cd spring-boot-jpa
+$ ../mvnw clean package
+$ ../mvnw spring-boot:run
 ```
 
 - Send request
