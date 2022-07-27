@@ -1,5 +1,3 @@
-The example project for StringBoot service
-
 <div align="center">
     <img src="./assets/images/spring_boot_icon.png"/>
 </div>
