@@ -16,7 +16,7 @@ import org.springframework.test.context.ActiveProfiles;
 /**
  * @author huypva
  */
-@ActiveProfiles("test")
+//@ActiveProfiles("test")
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
