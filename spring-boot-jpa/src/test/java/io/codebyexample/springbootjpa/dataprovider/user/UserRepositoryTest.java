@@ -11,12 +11,10 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
-import org.springframework.test.context.ActiveProfiles;
 
 /**
  * @author huypva
  */
-//@ActiveProfiles("test")
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
